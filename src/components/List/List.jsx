@@ -1,14 +1,19 @@
 import PropTypes from 'prop-types'
+import "./List.scss";
 
 const List = ({listas}) =>{
     return(
-        <div>
-            {
-                listas.map((lista)=>{
-                    return <p>{lista}</p>
-                }
-                )
-            }
+        <div className="box3">
+          <section className="menu">
+              {
+                  listas.map((item) =>
+                  {
+                    
+                    return <div className={item}></div>
+                                      
+                  })
+              }
+          </section>
         </div>
     )
 }
