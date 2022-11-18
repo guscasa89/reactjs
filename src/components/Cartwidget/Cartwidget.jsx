@@ -1,10 +1,10 @@
-
+import "./Cartwidget.scss";
 
 const Cartwidget = () =>{
     return(
-        <div>
-            <h1>Icono</h1>
-            <h5>4</h5>
+        <div className="container">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>12</span>
         </div>
     )
 }

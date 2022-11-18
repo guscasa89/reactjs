@@ -1,4 +1,4 @@
-.navbar {
+/*.navbar {
     min-height: 56px;
     background: linear-gradient(
       to bottom,
@@ -24,5 +24,55 @@
       min-width: 48px;
       font-weight: bold;
   }
+*/  
   
+.navbar {
+  min-height: 56px;
+  background: linear-gradient(
+    to bottom,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(92, 29, 29, 1) 43%,
+    rgba(242, 154, 46, 1) 100%
+  );
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid orange;
+}
+
+nav ul {
+  list-style: none;
   
+}
+nav ul li a {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+nav ul li a:hover {
+  color: naranja;
+  box-shadow: 7px 5px 56px -12px #f29a2e;
+}
+nav ul li a:active {
+  transform: scale(0.97);
+  box-shadow: 7px 5px 56px -10px #f29a2e;
+}
+
+#logo {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 140px;
+  height: 80px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+#logo:hover {
+  box-shadow: 7px 5px 56px -12px #f29a2e;
+}
+#logo:active {
+  transform: scale(0.97);
+  box-shadow: 7px 5px 56px -10px #f29a2e;
+}
