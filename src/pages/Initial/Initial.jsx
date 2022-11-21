@@ -1,6 +1,6 @@
 import Layout from '../../components/Layout'
 import Navbar from '../../components/Navbar';
-import List from '../../components/List'
+import List from '../../components/ItemListContainer'
 
 const Initial  = () => {
     //const opciones = ['Inicio','Congelados','Tartas','Ensaladas','Contacto']

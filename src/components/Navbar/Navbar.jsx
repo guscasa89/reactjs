@@ -2,7 +2,7 @@ import Proptypes from "prop-types";
 import "./Navbar.scss";
 import Cartwidget from "../Cartwidget/Cartwidget";
 
-const Navbar = ({ children }) => {
+const Navbar = ({ }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     <div className="container-fluid">
@@ -15,13 +15,16 @@ const Navbar = ({ children }) => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="">Menu</a>
+            <a className="nav-link" href="">Congelados</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="">Pedidos</a>
+            <a className="nav-link" href="">Tartas</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="">Sobre mi</a>
+            <a className="nav-link" href="">Jugos</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="">Sopas</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="">Contacto</a>
@@ -37,7 +40,7 @@ const Navbar = ({ children }) => {
 };
 
 Navbar.prototype = {
-  opciones: Proptypes.array.isRequired,
+  //opciones: Proptypes.array.isRequired,
   children: Proptypes.element,
 };
 

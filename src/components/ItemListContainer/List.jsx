@@ -9,13 +9,14 @@ const List = ({listas}) =>{
                   listas.map((item) =>
                   {
                     
-                    return <div className={item}></div>
+                    return <div key={item} className={item}></div>
                                       
                   })
               }
           </section>
         </div>
     )
+    
 }
 
 List.proptype = {
