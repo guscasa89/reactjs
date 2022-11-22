@@ -3,7 +3,10 @@ import "./Navbar.scss";
 import Cartwidget from "../Cartwidget/Cartwidget";
 import ItemCount from '../ItemCount/ItemCount';
 
+
 const Navbar = ({ }) => {
+
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     <div className="container-fluid">

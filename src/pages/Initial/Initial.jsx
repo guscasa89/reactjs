@@ -1,7 +1,7 @@
 import Layout from '../../components/Layout'
 import Navbar from '../../components/Navbar';
 import List from '../../components/ItemListContainer'
-import {useState} from 'react'
+
 
 const Initial  = () => {
     const Items = ["item item1", "item item2", "item item3", "item item4"]
