@@ -4,6 +4,7 @@ import "./List.scss";
 const List = ({listas}) =>{
     return(
         <div className="box3">
+        
           <section className="menu">
               {
                   listas.map((item) =>
@@ -14,9 +15,11 @@ const List = ({listas}) =>{
                   })
               }
           </section>
+          
         </div>
+        
     )
-    
+
 }
 
 List.proptype = {

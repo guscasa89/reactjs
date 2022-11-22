@@ -1,6 +1,7 @@
 import Proptypes from "prop-types";
 import "./Navbar.scss";
 import Cartwidget from "../Cartwidget/Cartwidget";
+import ItemCount from '../ItemCount/ItemCount';
 
 const Navbar = ({ }) => {
   return (
@@ -31,6 +32,7 @@ const Navbar = ({ }) => {
           </li>
         </ul>
         
+        <ItemCount />
         <Cartwidget />
         
       </div>

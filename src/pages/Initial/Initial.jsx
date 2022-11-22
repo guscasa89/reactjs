@@ -1,9 +1,9 @@
 import Layout from '../../components/Layout'
 import Navbar from '../../components/Navbar';
 import List from '../../components/ItemListContainer'
+import {useState} from 'react'
 
 const Initial  = () => {
-    //const opciones = ['Inicio','Congelados','Tartas','Ensaladas','Contacto']
     const Items = ["item item1", "item item2", "item item3", "item item4"]
     return(
         <Layout>
@@ -11,6 +11,20 @@ const Initial  = () => {
             <List listas={Items}/>
         </Layout>
     )
+    /*
+    const[name, setName] = useState('ReactClass');
+
+    return(
+        <div >
+            <button onClick={() => setName('ReactFucntion')}></button>
+            <h1>Hola {name}</h1>
+        </div>
+    )
+    */
+    //const opciones = ['Inicio','Congelados','Tartas','Ensaladas','Contacto']
+    
+    
+    
 }
 
 export default Initial;
