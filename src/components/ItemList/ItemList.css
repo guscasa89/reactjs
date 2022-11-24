@@ -1,0 +1,32 @@
+.menu {
+    color: #f2f2f2;
+    background-color: rgba(0, 0, 0, 0.514);
+    font-family: "Karla", sans-serif;
+    padding: 20px;
+    margin: 50px;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+  }
+
+  .item {
+    height: 300px;
+    width: 300px;
+    border: 2px solid #0d0d0d;
+    margin: 20px;
+    box-shadow: 2px 2px 5px #73412f;
+    border-radius: 5px;
+  }
+  .item:hover {
+    transform: scale(1.15);
+    transition: all 0.9s;
+  }
+  h1{
+    color: #f2f2f2;
+    font-family: "Karla", sans-serif;
+  }
+
+  
