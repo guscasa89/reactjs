@@ -4,7 +4,7 @@ import Cartwidget from "../Cartwidget/Cartwidget";
 import ItemCount from '../ItemCount/ItemCount';
 
 
-const Navbar = ({ }) => {
+const Navbar = ({ opciones }) => {
 
 
   return (
@@ -18,21 +18,16 @@ const Navbar = ({ }) => {
               <span className="visually-hidden">(current)</span>
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="">Congelados</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="">Tartas</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="">Jugos</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="">Sopas</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="">Contacto</a>
-          </li>
+          {
+                  opciones.map((item, id) =>
+                  {
+                    //puedo generar mis propias llaves, por ejemplo let key = item+"-"+id
+                    return <li key={id} className="nav-item"><a className="nav-link" href="">{item}</a></li>
+                                      
+                  })
+          }
+          
+          
         </ul>
         
         <ItemCount />

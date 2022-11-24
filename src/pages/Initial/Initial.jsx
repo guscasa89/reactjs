@@ -1,14 +1,15 @@
 import Layout from '../../components/Layout'
 import Navbar from '../../components/Navbar';
-import List from '../../components/ItemListContainer'
+import ItemListContainer from '../../components/ItemListContainer'
 
 
 const Initial  = () => {
     const Items = ["item item1", "item item2", "item item3", "item item4"]
+    const Opciones = ["Congelados", "Tartas", "Jugos", "Sopas", "Contacto"]
     return(
         <Layout>
-            <Navbar />
-            <List listas={Items}/>
+            <Navbar opciones={Opciones}/>
+            <ItemListContainer listas={Items}/>
         </Layout>
     )
     /*

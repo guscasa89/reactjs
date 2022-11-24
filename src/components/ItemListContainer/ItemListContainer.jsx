@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import "./List.scss";
+import "./ItemListContainer.scss";
 
-const List = ({listas}) =>{
+const ItemListContainer = ({listas}) =>{
     return(
         <div className="box3">
         
@@ -22,8 +22,8 @@ const List = ({listas}) =>{
 
 }
 
-List.proptype = {
+ItemListContainer.proptype = {
     listas: PropTypes.array.isRequired
 }
 
-export default List;
+export default ItemListContainer;
