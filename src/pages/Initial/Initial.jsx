@@ -7,13 +7,12 @@ import ItemDetailContainer from '../../components/ItemDetailContainer';
 
 
 const Initial  = () => {
-    const Items = ["item item1", "item item2", "item item3", "item item4"]
     const Opciones = [
         {menu: 'Inicio', href: '/inicio'}, 
-        {menu: 'Congelados', href: '/congelados'}, 
-        {menu: 'Tartas', href: '/tartas'}, 
-        {menu: 'Sopas', href: '/sopas'}, 
-        {menu: 'Jugos', href: '/jugos'}, 
+        {menu: 'Congelados', href: '/category/1'}, 
+        {menu: 'Tartas', href: '/category/2'}, 
+        {menu: 'Sopas', href: '/category/3'}, 
+        {menu: 'Jugos', href: '/category/4'}, 
         {menu: 'Contacto', href: '/contacto'}
     ]
     return(
@@ -24,10 +23,7 @@ const Initial  = () => {
         <Routes>
             <Route exact path='/' element={<ItemListContainer />}/>
             <Route exact path='/inicio' element={<ItemListContainer />}/>
-            <Route exact path='/congelados' element={<ItemListContainer />}/>
-            <Route exact path='/tartas' element={<ItemListContainer />}/>
-            <Route exact path='/sopas' element={<ItemListContainer />}/>
-            <Route exact path='/jugos' element={<ItemListContainer />}/>
+            <Route exact path='/category/:categoryid' element={<ItemListContainer />}/>
             <Route exact path='/contacto' element={<Home />}/>
             <Route exact path='/item/:id' element={<ItemDetailContainer />}/>
         </Routes>

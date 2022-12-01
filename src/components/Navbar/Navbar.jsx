@@ -10,7 +10,7 @@ const Navbar = ({ opciones }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     <div className="container-fluid">
-      <a className="navbar-brand" href="#"><img id="logo" src="/img/logo2.png" alt="" /></a>
+      <a className="navbar-brand" href="/"><img id="logo" src="/img/logo2.png" alt="" /></a>
       <div className="collapse navbar-collapse" id="navbarColor01">
         <ul className="navbar-nav me-auto">
           

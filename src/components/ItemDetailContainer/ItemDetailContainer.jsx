@@ -6,58 +6,104 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
 
-    const { id } = useParams();
+  const { id } = useParams();
 
-    {/* Me tengo que traer de nuevo el arreglo? */}
-    const Items = [
-        {
+
+  const [item, setItem] = useState()
+
+  const darItem = (id) => {
+    var item = {};
+    switch (id) {
+      case "1":
+        item = {
           id: "1",
+          id_cat: "1",
           url: "/img/salad.jpeg",
-          titulo: "Ensalada",
+          titulo: "Ensalada Quinoa",
           descripcion:
             "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, ipsum. Sapiente harum error aliquid accusamus quidem ullam delectus aspernatur debitis!",
           costo: "$200",
-        },
-    
-        {
+        }
+        
+        break;
+      case "2":
+        item = {
           id: "2",
+          id_cat: "1",
+          url: "/img/salad.jpeg",
+          titulo: "Ensalada Caprese",
+          descripcion:
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, ipsum. Sapiente harum error aliquid accusamus quidem ullam delectus aspernatur debitis!",
+          costo: "$200",
+        }
+        break;
+      case "3":
+        item = {
+          id: "3",
+          id_cat: "1",
+          url: "/img/salad.jpeg",
+          titulo: "Ensalada Cesar",
+          descripcion:
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, ipsum. Sapiente harum error aliquid accusamus quidem ullam delectus aspernatur debitis!",
+          costo: "$200",
+        }
+        break;
+      case "4":
+        item = {
+          id: "4",
+          id_cat: "2",
           url: "/img/freezer.jpeg",
-          titulo: "Congelados",
+          titulo: "Canelones verdura",
           descripcion:
             "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, ipsum. Sapiente harum error aliquid accusamus quidem ullam delectus aspernatur debitis!",
           costo: "$220",
-        },
-    
+        }
+        break;
+      case "5":
+        item = 
         {
-          id: "3",
-          url: "/img/sopa.jpeg",
-          titulo: "Sopas",
+          id: "5",
+          id_cat: "2",
+          url: "/img/freezer.jpeg",
+          titulo: "Matambre a la leche",
           descripcion:
             "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, ipsum. Sapiente harum error aliquid accusamus quidem ullam delectus aspernatur debitis!",
-          costo: "$180",
-        },
-    
+          costo: "$220",
+        }
+        break;
+      case "6":
+          item = 
         {
-          id: "4",
-          url: "/img/jugos.jpeg",
-          titulo: "Jugos",
+          id: "6",
+          id_cat: "2",
+          url: "/img/freezer.jpeg",
+          titulo: "Carne estofada",
           descripcion:
             "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, ipsum. Sapiente harum error aliquid accusamus quidem ullam delectus aspernatur debitis!",
-          costo: "$150",
-        },
-      ];
+          costo: "$220",
+        }
+        break;
+      default:
+        item = {
+          id: "7",
+          id_cat: "2",
+          url: "/img/freezer.jpeg",
+          titulo: "Variosssssss",
+          descripcion:
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, ipsum. Sapiente harum error aliquid accusamus quidem ullam delectus aspernatur debitis!",
+          costo: "$220",
+        }
+        break;
+    }
 
-      item = {}
-      for (const obj in Items) {
-        if(obj.id = id)
-            item = obj;
-      }
-    
-  const [item, setItem] = useState();
-
-
+    return item;
+  }
+ 
 
   const getItem = () => {
+
+    var Item = darItem(id);
+
     new Promise((resolve, reject) => setTimeout(() => resolve(Item), 2000))
       .then((res) => {
         console.log(res);
@@ -69,10 +115,12 @@ const ItemDetailContainer = () => {
   };
 
   useEffect(() => {
+    
     getItem();
   }, []);
 
-  return <div>{item && <ItemDetail item={item} />}</div>;
+  {return <div>{item && <ItemDetail item={item} />}</div>;}
+ 
 
 };
 
