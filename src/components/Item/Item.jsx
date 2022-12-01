@@ -1,5 +1,8 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import Button from 'react-bootstrap/Button';
+import ItemDetailContainer from "../ItemDetailContainer";
+import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
   return (
@@ -17,7 +20,9 @@ const Item = ({ item }) => {
       <Card.Footer>
         <small className="text-muted">Ramallo Cocina</small>
       </Card.Footer>
+      <Link to={`/item/${item.id}`}>Mas info</Link>
     </Card>
+    
   );
 };
 

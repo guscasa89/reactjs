@@ -5,7 +5,7 @@ const ItemList = ({ items }) => {
   return (
     
     <section className="menu">
-        {items.map((item) => {
+        { items && items.map((item) => {
           return <div key={item.titulo} className="item">
               <Item item={item}/>
           </div>;

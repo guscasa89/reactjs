@@ -13,16 +13,12 @@ const Navbar = ({ opciones }) => {
       <a className="navbar-brand" href="#"><img id="logo" src="/img/logo2.png" alt="" /></a>
       <div className="collapse navbar-collapse" id="navbarColor01">
         <ul className="navbar-nav me-auto">
-          <li className="nav-item">
-            <a className="nav-link active" href="">Inicio
-              <span className="visually-hidden">(current)</span>
-            </a>
-          </li>
+          
           {
                   opciones.map((item, id) =>
                   {
                     //puedo generar mis propias llaves, por ejemplo let key = item+"-"+id
-                    return <li key={id} className="nav-item"><a className="nav-link" href="">{item}</a></li>
+                    return <li key={id} className="nav-item"><a className="nav-link" href={item.href}>{item.menu}</a></li>
                                       
                   })
           }
