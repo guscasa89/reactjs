@@ -12,7 +12,7 @@ const ItemListContainer = () => {
   const Items = [
     {
       id: "1",
-      id_cat: "1",
+      id_cat: "2",
       url: "/img/salad.jpeg",
       titulo: "Ensalada Quinoa",
       descripcion:
@@ -21,7 +21,7 @@ const ItemListContainer = () => {
     },
     {
       id: "2",
-      id_cat: "1",
+      id_cat: "2",
       url: "/img/salad.jpeg",
       titulo: "Ensalada Caprese",
       descripcion:
@@ -30,7 +30,7 @@ const ItemListContainer = () => {
     },
     {
       id: "3",
-      id_cat: "1",
+      id_cat: "2",
       url: "/img/salad.jpeg",
       titulo: "Ensalada Cesar",
       descripcion:
@@ -39,7 +39,7 @@ const ItemListContainer = () => {
     },
     {
       id: "4",
-      id_cat: "2",
+      id_cat: "1",
       url: "/img/freezer.jpeg",
       titulo: "Canelones verdura",
       descripcion:
@@ -48,7 +48,7 @@ const ItemListContainer = () => {
     },
     {
       id: "5",
-      id_cat: "2",
+      id_cat: "1",
       url: "/img/freezer.jpeg",
       titulo: "Matambre a la leche",
       descripcion:
@@ -57,7 +57,7 @@ const ItemListContainer = () => {
     },
     {
       id: "6",
-      id_cat: "2",
+      id_cat: "1",
       url: "/img/freezer.jpeg",
       titulo: "Carne estofada",
       descripcion:
@@ -66,7 +66,7 @@ const ItemListContainer = () => {
     },
     {
       id: "7",
-      id_cat: "2",
+      id_cat: "1",
       url: "/img/freezer.jpeg",
       titulo: "Albondigas de carne",
       descripcion:

@@ -2,7 +2,7 @@ import Layout from '../../components/Layout'
 import Navbar from '../../components/Navbar';
 import ItemListContainer from '../../components/ItemListContainer'
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import Home from '../../components/Home'
+import Contacto from '../../components/Contacto'
 import ItemDetailContainer from '../../components/ItemDetailContainer';
 
 
@@ -10,7 +10,7 @@ const Initial  = () => {
     const Opciones = [
         {menu: 'Inicio', href: '/inicio'}, 
         {menu: 'Congelados', href: '/category/1'}, 
-        {menu: 'Tartas', href: '/category/2'}, 
+        {menu: 'Ensaladas', href: '/category/2'}, 
         {menu: 'Sopas', href: '/category/3'}, 
         {menu: 'Jugos', href: '/category/4'}, 
         {menu: 'Contacto', href: '/contacto'}
@@ -24,7 +24,7 @@ const Initial  = () => {
             <Route exact path='/' element={<ItemListContainer />}/>
             <Route exact path='/inicio' element={<ItemListContainer />}/>
             <Route exact path='/category/:categoryid' element={<ItemListContainer />}/>
-            <Route exact path='/contacto' element={<Home />}/>
+            <Route exact path='/contacto' element={<Contacto />}/>
             <Route exact path='/item/:id' element={<ItemDetailContainer />}/>
         </Routes>
         </BrowserRouter>
