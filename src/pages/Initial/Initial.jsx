@@ -34,6 +34,7 @@ const Initial  = () => {
             <Route exact path='/category/:categoryid' element={<ItemListContainer />}/>
             <Route exact path='/contacto' element={<Contacto />}/>
             <Route exact path='/item/:id' element={<ItemDetailContainer />}/>
+            <Route exact path='/cart' element={<ItemListContainer />}/>
         </Routes>
         </BrowserRouter>
     )
