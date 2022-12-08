@@ -1,11 +1,64 @@
-.btnGreen{
-    background-color: green;
-}
+:root {
+    /*fonts*/
+    --catamaran-font: 'Catamaran', sans-serif;
+    --mulish-font: 'Mulish', sans-serif;
+    /*colors*/
+    --primary-color: #f7b035;
+    --secondary-color: #256b3e;
+    --body-bg-color: #1d1d1d;
+    --border-color: #555555;
+    --success-color: #4f8a10;
+    --error-color: #d8000c;
+    --info-color: #31708f;
+    --just-white: #ffffff;
+  }
 
-.btnRed{
-    background-color: red;
-}
-
-.ipt{
-    width: 75%;
-}
+.count-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .count-container__contador {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr;
+    width: 140px;
+    height: 50px;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 40px auto 0;
+  }
+  
+  .count-container__button {
+    color: var(--primary-color);
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border-color);
+    font-size: 1.6rem;
+    transition: all 250ms ease-out;
+    cursor: pointer;
+  }
+  
+  .count-container__button:hover {
+    border: none;
+    color: var(--just-white);
+    background-color: var(--primary-color);
+  }
+  
+  .count-container__button[disabled] {
+    color: var(--border-color);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+  }
+  
+  .count-container__qty {
+    text-align: center;
+    height: 100%;
+    padding-top: 10px;
+    color: var(--primary-color);
+    background-color: var(--just-white);
+  }
+  .button-primary {
+    cursor: pointer;
+  }

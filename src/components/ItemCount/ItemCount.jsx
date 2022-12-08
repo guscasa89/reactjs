@@ -3,21 +3,26 @@ import './ItemCount.scss'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 
-const ItemCount = () => {
+const ItemCount = ({onAdd}) => {
     const [count, setCount] = useState(0);
 
 
-  return (
-    <div className="input-group">
-    <span className="input-group-btn">
-        <button onClick={() => { count!=0 ? setCount(count -1) : setCount(0) }}  className="btn btnRed btn-minuse" type="button">-</button>
-    </span>
-    <input type="text" className="ipt form-control no-padding add-color text-center height-25" defaultValue={count}/>
-    <span className="input-group-btn">
-        <button onClick={() => setCount(count + 1)} className="btn btnGreen btn-pluss" type="button">+</button>
-    </span>
+    const addProduct = (num) => {
+      setCount(count + num);
+    };
 
-    <Button variant="outline-warning">Agregar al carrito</Button>{' '}
+  return (
+    <div className="count-container">
+    <div className="count-container__contador">
+      <button
+        className="count-container__button" onClick={() => addProduct(-1)} disabled={count === 0} type="button">-</button>
+    <span className="count-container__qty">{count}</span>
+    <button className="count-container__button" onClick={() => addProduct(+1)} type="button">+</button>
+    </div>
+
+    <Button onClick={() => {
+          onAdd(count);
+        }} variant="outline-warning" disabled={count === 0 ? true : null}>Agregar al carrito</Button>{' '}
     </div>
   )
 }

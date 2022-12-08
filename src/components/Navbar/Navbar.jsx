@@ -1,11 +1,11 @@
 import Proptypes from "prop-types";
 import "./Navbar.scss";
 import Cartwidget from "../Cartwidget/Cartwidget";
-import ItemCount from '../ItemCount/ItemCount';
 
 
 const Navbar = ({ opciones }) => {
 
+  
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -26,7 +26,7 @@ const Navbar = ({ opciones }) => {
           
         </ul>
         
-        <ItemCount />
+        
         <Cartwidget />
         
       </div>

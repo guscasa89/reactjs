@@ -4,6 +4,8 @@ import ItemListContainer from '../../components/ItemListContainer'
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Contacto from '../../components/Contacto'
 import ItemDetailContainer from '../../components/ItemDetailContainer';
+//import { useContext } from 'react';
+//import { CartContext } from '../../Context/CartContext';
 
 
 const Initial  = () => {
@@ -15,6 +17,12 @@ const Initial  = () => {
         {menu: 'Jugos', href: '/category/4'}, 
         {menu: 'Contacto', href: '/contacto'}
     ]
+
+    //const value = useContext(CartContext);
+
+    //console.log(value);
+    
+
     return(
         <BrowserRouter >
         <Layout>

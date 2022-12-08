@@ -4,11 +4,14 @@ import './index.scss';
 //import App from './App';
 import Initial from './pages/Initial';
 import reportWebVitals from './reportWebVitals';
+import { CartContext } from './Context/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <CartContext.Provider value='[]'>
     <Initial />
+    </CartContext.Provider>
   </React.StrictMode>
 );
 
