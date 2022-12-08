@@ -1,10 +1,13 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import './ButtonEnd.css'
+import './ButtonEnd.css';
+import { Link } from "react-router-dom";
 
 const ButtonEnd = () => {
   return (
-    <Button  variant="success">Finalizar Compra</Button>
+    <Link to={`/cart`}>
+      <Button  variant="success">Finalizar Compra</Button>
+    </Link>
   )
 }
 

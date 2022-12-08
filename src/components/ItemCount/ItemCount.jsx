@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 const ItemCount = ({onAdd}) => {
     const [count, setCount] = useState(0);
 
+    
 
     const addProduct = (num) => {
       setCount(count + num);

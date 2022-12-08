@@ -1,15 +1,19 @@
 import React from "react";
 import './ItemDetail.scss'
-import ItemCount from '../ItemCount/ItemCount';
 import Card from "react-bootstrap/Card";
-import ButtonEnd from "../ButtonEnd/ButtonEnd";
+import { useState } from 'react';
+import ShowData from "../ShowData/ShowData";
 
-const ItemDetail = ({ item , inputType = 'finalizar'}) => {
+const ItemDetail = ({ item }) => {
 
   //const Boton = inputType === 'agregar' ? ItemCount : ButtonEnd;
 
+  const [option, setOption] = useState(1)
+
+
   const onAdd = (count) => {
     alert(`Agregaste ${count} productos`);
+    setOption(2)
   };  
 
   return (
@@ -21,8 +25,8 @@ const ItemDetail = ({ item , inputType = 'finalizar'}) => {
         <Card.Text>{item.costo}</Card.Text>
       </Card.Body>
       <Card.Img className="resize" variant="top" src={item.url} />
-      <ItemCount onAdd={onAdd} />
-      <ButtonEnd />
+      <ShowData onAdd={onAdd} type={option}/>
+      
     </Card>
 
   );
