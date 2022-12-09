@@ -3,21 +3,27 @@ import './ItemDetail.scss'
 import Card from "react-bootstrap/Card";
 import { useState } from 'react';
 import ShowData from "../ShowData/ShowData";
+import { useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 
 const ItemDetail = ({ item }) => {
 
   //const Boton = inputType === 'agregar' ? ItemCount : ButtonEnd;
 
   const [option, setOption] = useState(1)
+  const {cart, addToCart} = useContext(CartContext)
 
 
   const onAdd = (count) => {
-    alert(`Agregaste ${count} productos`);
+    alert(`Agregaste ${count} unidades`);
+    addToCart(item,count)
+    console.log(cart);
     setOption(2)
+
   };  
 
   return (
-
+    
     <Card className="bg-dark text-white">
       <Card.Body>
         <Card.Title>{item.titulo}</Card.Title>
