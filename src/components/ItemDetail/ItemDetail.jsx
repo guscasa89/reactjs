@@ -11,13 +11,16 @@ const ItemDetail = ({ item }) => {
   //const Boton = inputType === 'agregar' ? ItemCount : ButtonEnd;
 
   const [option, setOption] = useState(1)
-  const {cart, addToCart} = useContext(CartContext)
+  const {cartList, addToCart} = useContext(CartContext)
 
+  const context = useContext(CartContext);
+  
 
   const onAdd = (count) => {
     alert(`Agregaste ${count} unidades`);
     addToCart(item,count)
-    console.log(cart);
+    console.log(context)
+    //console.log(cart);
     setOption(2)
 
   };  
