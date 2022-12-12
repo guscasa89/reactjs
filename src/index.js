@@ -4,7 +4,7 @@ import './index.scss';
 //import App from './App';
 import Initial from './pages/Initial';
 import reportWebVitals from './reportWebVitals';
-import { CartContextProvider } from './Context/CartContext';
+import { CartContextProvider } from './Context/CartContextOld';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
