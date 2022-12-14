@@ -4,9 +4,13 @@ import './ButtonEnd.css';
 import { Link } from "react-router-dom";
 
 const ButtonEnd = () => {
+  
+  
+  
+  
   return (
     <Link to={`/cart`}>
-      <Button  variant="success">Finalizar Compra</Button>
+      <Button variant="success">Finalizar Compra</Button>
     </Link>
   )
 }

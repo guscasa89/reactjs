@@ -4,23 +4,23 @@ import Card from "react-bootstrap/Card";
 import { useState } from 'react';
 import ShowData from "../ShowData/ShowData";
 import { useContext } from "react";
-import { useCartContext, CartContext } from "../../Context/CartContext";
+import {  CartContext } from "../../Context/CartContext";
 
 const ItemDetail = ({ item }) => {
 
   //const Boton = inputType === 'agregar' ? ItemCount : ButtonEnd;
 
   const [option, setOption] = useState(1)
-  const {cartList, addToCart} = useCartContext();
+  const {cartList, addToCart} =  useContext(CartContext);
 
-  const context = useContext(CartContext);
+
   
 
   const onAdd = (count) => {
     alert(`Agregaste ${count} unidades`);
-    addToCart({item,count})
-    console.log(context)
-    //console.log(cart);
+    addToCart(item,count)
+    //console.log(context)
+    console.log("carrito: " + cartList);
     setOption(2)
 
   };  
@@ -34,7 +34,7 @@ const ItemDetail = ({ item }) => {
         <Card.Text>{item.costo}</Card.Text>
       </Card.Body>
       <Card.Img className="resize" variant="top" src={item.url} />
-      <ShowData onAdd={onAdd} type={option}/>
+      <ShowData onAdd={onAdd} cart={cartList} type={option}/>
       
     </Card>
 

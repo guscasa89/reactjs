@@ -1,14 +1,16 @@
 import "./Cartwidget.scss";
-
+import { useContext } from "react";
+import { CartContext } from '../../Context/CartContext';
 
 const Cartwidget = () =>{
 
+    const {qty} = useContext(CartContext) 
 
 
     return(
         <div className="container">
             <i className="fa-solid fa-cart-shopping"></i>
-            <span className="badge">12</span>
+            <span className="badge">{qty}</span>
         </div>
     )
 }
