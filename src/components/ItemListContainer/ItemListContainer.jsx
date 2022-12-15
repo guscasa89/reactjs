@@ -2,10 +2,13 @@ import "./ItemListContainer.scss";
 import ItemList from "../ItemList/ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import {collection, getDocs, getFirestore} from "firebase/firestore"
+
 
 const ItemListContainer = () => {
 
   const { categoryid } = useParams();
+
   
   const [itemsList, setItemsList] = useState();
 
@@ -164,6 +167,21 @@ const ItemListContainer = () => {
 
     
   };
+
+  /*
+  useEffect(() => {
+    const db = getFirestore();
+
+    const itemRef = collection(db, "items")
+    getDocs(itemRef).then(result => {
+      
+        setItemsList(result.docs.map((doc) => ({id:doc.id, ...doc.data()})))
+        console.log('firestore consulta -> ' + 
+        console.log(result.docs))
+      
+    })
+  }, []);
+  */
 
   useEffect(() => {
     callListItems();

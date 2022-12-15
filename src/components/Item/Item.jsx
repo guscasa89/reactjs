@@ -9,7 +9,7 @@ const Item = ({ item }) => {
       <Card.Img variant="top" src={item.url} />
       <Card.Body>
         <Card.Title>{item.titulo}</Card.Title>
-        <Card.Text>
+        <Card.Text >
          {item.descripcion}
         </Card.Text>
         <Card.Text>

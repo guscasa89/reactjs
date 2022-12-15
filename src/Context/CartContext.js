@@ -12,8 +12,12 @@ const initialState = {
     count: 0
 }
 
-export const CartContextProvider = ({defaultValue = [], children}) => {
+export const CartContextProvider = ({children}) => {
+    
+    const [state, dispatch] = useReducer(CartReducer, initialState)
 
+    //const [cartList, setCartList] = useState(initialState);
+    /*
     const [cartList, setCartList] = useState(
         JSON.parse(localStorage.getItem('cartList')) || defaultValue);
     
@@ -21,9 +25,10 @@ export const CartContextProvider = ({defaultValue = [], children}) => {
         localStorage.setItem('cartList',  JSON.stringify(cartList)); 
       }, [cartList]);
  
-    
-    const [state, dispatch] = useReducer(CartReducer, initialState)
+    */
 
+
+    
     function addToCart(item, count){
 
         const updatedCart = [...state.cartList]
@@ -42,7 +47,7 @@ export const CartContextProvider = ({defaultValue = [], children}) => {
             updatedCart.push(newItem);
             //setCartList(cartList.concat(newItem))
             //console.log(cartList)
-            setCartList(updatedCart);
+            //setCartList(updatedCart);
         } 
         else {
             const updatedItem = {
@@ -52,44 +57,16 @@ export const CartContextProvider = ({defaultValue = [], children}) => {
               updatedCart.splice(updatedItemIndex, 1, updatedItem);
 
             //setCartList([...cartList, updatedItem.cantidad = qty])
-            setCartList(updatedCart);
+            //setCartList(updatedCart);
 
         }
         dispatch({
             type: "ADD_TO_CART",
-            payload: { cartList: updatedCart },
+            payload: { updatedCart, count },
           });
         //return { ...state, cart: cartList };
     }
 
-
-    /*
-    function addToCart(item, qty){
-        
-        const updatedCart = [...cartList]
-        
-        //me devuelve el item del carro si ya esta
-        const updatedItemIndex = updatedCart.findIndex(
-            element => element.id === item.id
-          );
-        
-        //si no esta
-        if (updatedItemIndex < 0) {
-            //lo agregamos con spread
-            const newItem = { ...item, cantidad: qty }
-            updatedCart.push(newItem);
-        } 
-        else {
-            const updatedItem = {
-                ...cartList[updatedItemIndex], cantidad:qty
-              };
-
-              updatedCart.splice(updatedItemIndex, 1, updatedItem);
-            
-        }
-        setCartList(updatedCart);
-    }
-*/
 
     function removeItem(itemId){
         //console.log("Removing product with id: " + productId);
@@ -99,6 +76,8 @@ export const CartContextProvider = ({defaultValue = [], children}) => {
         const updatedItem = {
             ...updatedCart[updatedItemIndex]
          };
+
+         let updateCantidad = state.count - updatedItem.cantidad 
         //si se elimina la cantidad
         //updatedItem.quantity--;
         //if (updatedItem.quantity <= 0) {
@@ -108,16 +87,17 @@ export const CartContextProvider = ({defaultValue = [], children}) => {
         //}
         dispatch({
             type: "REMOVE_PRODUCT",
-            payload: { updatedCart },
+            payload: { updatedCart , updateCantidad },
           });
     }
 
     function clear(){
         const updatedCart = [];
+        let cantidad = 0;
         
         dispatch({
             type: "REMOVE_CART",
-            payload: { updatedCart },
+            payload: { updatedCart , cantidad },
           });
     }
 
@@ -146,7 +126,10 @@ export const CartContextProvider = ({defaultValue = [], children}) => {
         
         <CartContext.Provider value={{ 
             cartList: state.cartList, 
-            addToCart }}>
+            count: state.count,
+            addToCart, 
+            clear,
+            removeItem }}>
             {children}
         </CartContext.Provider>
     )

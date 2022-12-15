@@ -1,11 +1,14 @@
 import Proptypes from "prop-types";
 import "./Navbar.scss";
 import Cartwidget from "../Cartwidget/Cartwidget";
+import { Link } from "react-router-dom";
+import { CartContext } from '../../Context/CartContext';
+import { useContext } from "react";
 
 
 const Navbar = ({ opciones }) => {
 
-  
+  const { cartList} = useContext(CartContext);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -18,16 +21,17 @@ const Navbar = ({ opciones }) => {
                   opciones.map((item, id) =>
                   {
                     //puedo generar mis propias llaves, por ejemplo let key = item+"-"+id
-                    return <li key={id} className="nav-item"><a className="nav-link" href={item.href}>{item.menu}</a></li>
-                                      
+                    return <li key={id} className="nav-item"><Link to={item.href}>{item.menu}</Link></li>
+                    
+                    
                   })
           }
           
           
         </ul>
         
+        {cartList.length > 0 && <Cartwidget /> }
         
-        <Cartwidget />
         
       </div>
     </div>

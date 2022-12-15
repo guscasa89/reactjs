@@ -9,6 +9,7 @@ const ButtonEnd = () => {
   
   
   return (
+    
     <Link to={`/cart`}>
       <Button variant="success">Finalizar Compra</Button>
     </Link>

@@ -2,9 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 //import App from './App';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 import Initial from './pages/Initial';
 import reportWebVitals from './reportWebVitals';
 import { CartContextProvider } from './Context/CartContext';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCKtFElWlHun_XEMrklMH_34x1MRh4CgZc",
+  authDomain: "prueba-f4225.firebaseapp.com",
+  projectId: "prueba-f4225",
+  storageBucket: "prueba-f4225.appspot.com",
+  messagingSenderId: "677962491556",
+  appId: "1:677962491556:web:53509e97272435a20be831",
+  measurementId: "G-HH7F79TW8P"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
