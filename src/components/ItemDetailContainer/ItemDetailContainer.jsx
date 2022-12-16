@@ -3,14 +3,17 @@ import { useState, useEffect } from "react";
 import Item from "../Item/Item";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import {collection, getDocs, getFirestore} from "firebase/firestore"
 
 const ItemDetailContainer = () => {
 
   const { id } = useParams();
 
+  const [item, setItem] = useState(null)
 
-  const [item, setItem] = useState()
+  const [loading, setLoading] = useState(true)
 
+  /*
   const darItem = (id) => {
     var item = {};
     switch (id) {
@@ -177,13 +180,43 @@ const ItemDetailContainer = () => {
       .catch();
   };
 
+
   useEffect(() => {
 
     getItem();
   }, []);
+*/
 
-  { return <div>{item && <ItemDetail item={item} />}</div>; }
+useEffect(() => {
+  const db = getFirestore();
 
+    const Items = collection(db, "items")
+    getDocs(Items).then(result => {
+      
+      const arre = result.docs.map((doc) => ({id:doc.id, ...doc.data()}))
+      const itemSelected = arre.filter(item => item.id == id);
+        
+      setLoading(false);  
+      setItem(itemSelected[0]);
+      
+    })
+}, [id]);
+
+
+   return (
+   loading ? 
+    (
+      <div className='row justify-content-center'>
+        <div className="spinner-grow text-warning" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>  
+      </div>
+    ):
+    (
+      <div>{item && <ItemDetail item={item} />}</div>
+   
+    )
+   );
 
 };
 
