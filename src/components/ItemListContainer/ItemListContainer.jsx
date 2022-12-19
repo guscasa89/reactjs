@@ -77,7 +77,6 @@ const ItemListContainer = () => {
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, ipsum. Sapiente harum error aliquid accusamus quidem ullam delectus aspernatur debitis!",
       costo: "$220",
     },
-
     {
       id: "8",
       id_cat: "3",
@@ -87,7 +86,6 @@ const ItemListContainer = () => {
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, ipsum. Sapiente harum error aliquid accusamus quidem ullam delectus aspernatur debitis!",
       costo: "$180",
     },
-
     {
       id: "9",
       id_cat: "3",
@@ -106,7 +104,6 @@ const ItemListContainer = () => {
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, ipsum. Sapiente harum error aliquid accusamus quidem ullam delectus aspernatur debitis!",
       costo: "$180",
     },
-
     {
       id: "11",
       id_cat: "4",
@@ -116,7 +113,6 @@ const ItemListContainer = () => {
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, ipsum. Sapiente harum error aliquid accusamus quidem ullam delectus aspernatur debitis!",
       costo: "$150",
     },
-
     {
       id: "12",
       id_cat: "4",
@@ -127,7 +123,6 @@ const ItemListContainer = () => {
       costo: "$150",
     }
   ];
-
 */
   const darItems = (categoryid, Items) => {
 
@@ -140,17 +135,14 @@ const ItemListContainer = () => {
 
 /*
   const callListItems = () => {
-
     
     if(categoryid)
     {
       new Promise((resolve, reject) => setTimeout(() => resolve(darItems(categoryid, Items)), 2000))
       .then((res) => {
         console.log(res);
-
         setItemsList(res);
       })
-
       .catch();
     }
     else
@@ -158,14 +150,11 @@ const ItemListContainer = () => {
       new Promise((resolve, reject) => setTimeout(() => resolve(Items), 2000))
       .then((res) => {
         console.log(res);
-
         setItemsList(res);
       })
-
       .catch();
     }
     
-
     
   };
 */
@@ -180,9 +169,20 @@ const ItemListContainer = () => {
         //console.log(result.docs)
         //const arre = result.docs.map((doc) => ({id:doc.id, ...doc.data()}))
         //console.log(arre)
-        setItemsList(result.docs.map((doc) => ({id:doc.id, ...doc.data()})))
+        
         //console.log('firestore consulta -> ' + 
         //console.log(result.docs)
+
+        if(categoryid){
+          const arre = result.docs.map((doc) => ({id:doc.id, ...doc.data()}))
+          const itemsSelected = arre.filter(item => item.id_cat == categoryid);
+
+          setItemsList(itemsSelected)
+
+        }
+        else{
+          setItemsList(result.docs.map((doc) => ({id:doc.id, ...doc.data()})))
+        }
       
     })
   }, []);
@@ -195,7 +195,11 @@ const ItemListContainer = () => {
 
   return (
     <div className="box3">
-      {itemsList && <ItemList items={itemsList} />}
+      {itemsList && 
+        
+          <ItemList  items={itemsList} />
+      
+      }
       </div>
   );
 
