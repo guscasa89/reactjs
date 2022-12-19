@@ -33,6 +33,7 @@ const CartFinish = () => {
   }; 
 
   return (
+    
     <><Table striped bordered hover variant="dark">
       <thead>
         <tr>
@@ -60,6 +61,8 @@ const CartFinish = () => {
       </tbody>
     </Table>
     <Button disabled={count === 0} onClick={() => { onClear(); } } variant="danger">Vaciar carrito</Button>
+    <Link to={`/checkout`}><Button disabled={count === 0}  variant="warning">Confirmar Compra</Button></Link>
+    
     
     </>
 

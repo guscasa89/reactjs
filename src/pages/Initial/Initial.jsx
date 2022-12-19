@@ -5,6 +5,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Contacto from '../../components/Contacto'
 import ItemDetailContainer from '../../components/ItemDetailContainer';
 import CartFinish from '../../components/CartFinish';
+import Checkout from '../../components/Checkout';
 //import { useContext } from 'react';
 //import { CartContext } from '../../Context/CartContext';
 
@@ -36,6 +37,7 @@ const Initial  = () => {
             <Route exact path='/contacto' element={<Contacto />}/>
             <Route exact path='/item/:id' element={<ItemDetailContainer />}/>
             <Route exact path='/cart' element={<CartFinish />}/>
+            <Route exact path='/checkout' element={<Checkout />}/>
         </Routes>
         </BrowserRouter>
     )
