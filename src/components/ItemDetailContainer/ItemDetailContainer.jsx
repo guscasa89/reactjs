@@ -4,6 +4,7 @@ import Item from "../Item/Item";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import {collection, getDocs, getFirestore} from "firebase/firestore"
+import "./ItemDetailContainer.scss";
 
 const ItemDetailContainer = () => {
 
@@ -213,7 +214,7 @@ useEffect(() => {
       </div>
     ):
     (
-      <div>{item && <ItemDetail item={item} />}</div>
+      <div className="box3">{item && <ItemDetail item={item} />}</div>
    
     )
    );

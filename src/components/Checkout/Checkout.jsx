@@ -1,6 +1,7 @@
 import { React, useState, useContext } from 'react'
-import { Col, Row, Form } from "react-bootstrap";
+import { Col, Form } from "react-bootstrap";
 import Container from 'react-bootstrap/Container';
+import { collection, addDoc, getFirestore } from "firebase/firestore"
 
 import { CartContext } from '../../Context/CartContext';
 
@@ -13,6 +14,26 @@ const Checkout = () => {
     const addMonto = (num) => {
         costoTotal = costoTotal + num;
     };
+
+
+    const sendOrder = () =>{
+        const order = {
+            buyer : {name: "Pepe", phone: "1234556", email: "mail@mail.com"},
+            items: [{
+                id: "2",
+                id_cat: "2",
+                titulo: "Ensalada Caprese",
+                costo: "$200",
+                cantidad: 5}],
+            total: 1000
+        }
+
+        const db = getFirestore();
+        const ordersCollection = collection(db, "orders")
+        addDoc(ordersCollection,order).then(({id}) => {
+            alert("se agrego orden")
+        })
+    }
 
     //const [loading, setLoading] = useState(true)
 
