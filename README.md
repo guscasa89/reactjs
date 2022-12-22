@@ -47,19 +47,17 @@ Recordar que tiene un backend realizado con Firebase, por  si quieren descargar 
 
 ![image-20221222095221867](/img/image-20221222095221867.png)
 
-![estructura](https://user-images.githubusercontent.com/44064190/95280201-d4657680-082a-11eb-90e4-70e061f2b7ec.png)
-
 ## 
 
 ## ScreenShots
 
-![image-20221222095321780](C:\Users\e202735.NTDOM1\AppData\Roaming\Typora\typora-user-images\image-20221222095321780.png)
+![image-20221222095221867](/img/image-20221222095321780.png)
 
-![image-20221222095344048](C:\Users\e202735.NTDOM1\AppData\Roaming\Typora\typora-user-images\image-20221222095344048.png)
+![image-20221222095221867](/img/image-20221222095344048.png)
 
-![image-20221222095415576](C:\Users\e202735.NTDOM1\AppData\Roaming\Typora\typora-user-images\image-20221222095415576.png)
+![image-20221222095221867](/img/image-20221222095415576.png)
 
-![image-20221222095434298](C:\Users\e202735.NTDOM1\AppData\Roaming\Typora\typora-user-images\image-20221222095434298.png)
+![image-20221222095221867](/img/image-20221222095434298.png)
 
 ## 
 
