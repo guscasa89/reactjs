@@ -45,7 +45,7 @@ Recordar que tiene un backend realizado con Firebase, por  si quieren descargar 
 
 ## Estructura
 
-![image-20221222095221867](\img\image-20221222095221867.png)
+![image-20221222095221867](/img/image-20221222095221867.png)
 
 ![estructura](https://user-images.githubusercontent.com/44064190/95280201-d4657680-082a-11eb-90e4-70e061f2b7ec.png)
 
