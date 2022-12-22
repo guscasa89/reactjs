@@ -24,7 +24,7 @@ export const CartReducer = (state, action) => {
         case "IS_IN_CART":
             return {
                 ...state,
-                isInCart: [action.payload.esta],
+                isInCart: action.payload.esta,
             };
         default:
             return state;

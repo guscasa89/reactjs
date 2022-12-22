@@ -114,7 +114,7 @@ const CartFinish = () => {
                     const costoNum = Number(item.costo.replace("$", ""));
                     let total = item.cantidad * costoNum;
                     addMonto(total);
-                    return <tr><td>{item.titulo}</td><td>{item.costo}</td><td>{item.cantidad}</td><td> ${total}</td>
+                    return <tr key={item.id}><td>{item.titulo}</td><td>{item.costo}</td><td>{item.cantidad}</td><td> ${total}</td>
                       <td><Button onClick={() => { onRemove(item.id); }} variant="warning">Eliminar item</Button></td></tr>;
 
                   })}
@@ -124,8 +124,8 @@ const CartFinish = () => {
 
                 </tbody>
               </Table>
-              <Button disabled={count === 0} onClick={() => { onClear(); }} variant="danger">Vaciar carrito</Button>
-              <Button disabled={count === 0} onClick={() => { sendOrder(); }} variant="warning">Confirmar Compra</Button>
+              <Button className="space" disabled={count === 0} onClick={() => { onClear(); }} variant="danger">Vaciar carrito</Button>
+              <Button className="space" disabled={count === 0} onClick={() => { sendOrder(); }} variant="warning">Confirmar Compra</Button>
 
             </div>
 

@@ -5,9 +5,6 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Contacto from '../../components/Contacto'
 import ItemDetailContainer from '../../components/ItemDetailContainer';
 import CartFinish from '../../components/CartFinish';
-import Checkout from '../../components/Checkout';
-//import { useContext } from 'react';
-//import { CartContext } from '../../Context/CartContext';
 
 
 const Initial  = () => {
@@ -19,11 +16,6 @@ const Initial  = () => {
         {menu: 'Jugos', href: '/category/4'}, 
         {menu: 'Contacto', href: '/contacto'}
     ]
-
-    //const value = useContext(CartContext);
-
-    //console.log(value);
-    
 
     return(
         <BrowserRouter >
@@ -37,22 +29,10 @@ const Initial  = () => {
             <Route exact path='/contacto' element={<Contacto />}/>
             <Route exact path='/item/:id' element={<ItemDetailContainer />}/>
             <Route exact path='/cart' element={<CartFinish />}/>
-            <Route exact path='/checkout' element={<Checkout />}/>
         </Routes>
         </BrowserRouter>
     )
-    /*
-    const[name, setName] = useState('ReactClass');
-
-    return(
-        <div >
-            <button onClick={() => setName('ReactFucntion')}></button>
-            <h1>Hola {name}</h1>
-        </div>
-    )
-    */
-    //const opciones = ['Inicio','Congelados','Tartas','Ensaladas','Contacto']
-    
+      
     
     
 }

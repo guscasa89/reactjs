@@ -16,18 +16,6 @@ export const CartContextProvider = ({children}) => {
     
     const [state, dispatch] = useReducer(CartReducer, initialState)
 
-    //const [cartList, setCartList] = useState(initialState);
-    /*
-    const [cartList, setCartList] = useState(
-        JSON.parse(localStorage.getItem('cartList')) || defaultValue);
-    
-    useEffect(() => {
-        localStorage.setItem('cartList',  JSON.stringify(cartList)); 
-      }, [cartList]);
- 
-    */
-
-
     
     function addToCart(item, count){
 
@@ -41,35 +29,26 @@ export const CartContextProvider = ({children}) => {
 
         //si no esta
         if (updatedItemIndex < 0) {
-            //lo agregamos con spread o forma antigua
             const newItem = { ...item, cantidad: count }
-            //setCartList([...cartList, newItem])
             updatedCart.push(newItem);
-            //setCartList(cartList.concat(newItem))
-            //console.log(cartList)
-            //setCartList(updatedCart);
+
         } 
         else {
             const updatedItem = {
                 ...state.cartList[updatedItemIndex], cantidad:count
               };
-                //updatedItem.cantidad = qty;
               updatedCart.splice(updatedItemIndex, 1, updatedItem);
-
-            //setCartList([...cartList, updatedItem.cantidad = qty])
-            //setCartList(updatedCart);
 
         }
         dispatch({
             type: "ADD_TO_CART",
             payload: { updatedCart, count },
           });
-        //return { ...state, cart: cartList };
     }
 
 
     function removeItem(itemId){
-        //console.log("Removing product with id: " + productId);
+
         const updatedCart = [...state.cartList];
         const updatedItemIndex = updatedCart.findIndex(item => item.id === itemId);
 
@@ -78,13 +57,8 @@ export const CartContextProvider = ({children}) => {
          };
 
          let updateCantidad = state.count - updatedItem.cantidad 
-        //si se elimina la cantidad
-        //updatedItem.quantity--;
-        //if (updatedItem.quantity <= 0) {
         updatedCart.splice(updatedItemIndex, 1);
-        //} else {
-        //    updatedCart[updatedItemIndex] = updatedItem;
-        //}
+
         dispatch({
             type: "REMOVE_PRODUCT",
             payload: { updatedCart , updateCantidad },
