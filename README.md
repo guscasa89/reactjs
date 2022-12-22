@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Ramallo Cocina App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 
 
-## Available Scripts
+## Descripción
 
-In the project directory, you can run:
+`Ramallo Cocina App` es un aplicacion de e-commerce, que es el resultado del proyecto final para el curso de ReactJS de la academia `Coder House`. La aplicación permite conectarse con un firestore database realizado con `Firebase`. Permite consultar y ver menues de comida ofrecidos, navegar a sus detalles,  agregarlos al carrito, poder acceder a él, simular la compra de los  productos. Al clickear sobre el botón "realizar compra", pide llenar un formulario  con datos básicos y luego de confirmar se genera un id de orden para el usuario y en firebase se guarda la  orden con los productos que compró.
+
+**Tecnologías y librerías:**
+
+- Interfaz realizada con **ReactJS - Create React App**
+- Estilos con **Bootstrap**, **Material-UI**, **Toastify** y preprocesador **Sass**
+- Ruteo con **React Router Dom**
+- Backend con **Firebase**
+
+## 
+
+## Descargar y correr el proyecto
+
+Una vez clonado o descargado el proyecto, instalar dependencias:
+
+### 
+
+### `npm install`
+
+Correr el servidor:
+
+### 
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Se abre una pestaña del navegador en el puerto 3000:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 
 
-### `npm test`
+### Sino copiar esta URL y pegarla en el navegador: `http://localhost:3000`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 
 
-### `npm run build`
+## Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Recordar que tiene un backend realizado con Firebase, por  si quieren descargar y correr este proyecto, tienen que generar su  backend en firebase sino local con data fake. En el archivo `.env.example` estan las variables que deben ir para poder llenarlas con sus datos de Firebase.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Estructura
 
-### `npm run eject`
+![image-20221222095221867](C:\Users\e202735.NTDOM1\AppData\Roaming\Typora\typora-user-images\image-20221222095221867.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ScreenShots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![image-20221222095321780](C:\Users\e202735.NTDOM1\AppData\Roaming\Typora\typora-user-images\image-20221222095321780.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![image-20221222095344048](C:\Users\e202735.NTDOM1\AppData\Roaming\Typora\typora-user-images\image-20221222095344048.png)
 
-## Learn More
+![image-20221222095415576](C:\Users\e202735.NTDOM1\AppData\Roaming\Typora\typora-user-images\image-20221222095415576.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![image-20221222095434298](C:\Users\e202735.NTDOM1\AppData\Roaming\Typora\typora-user-images\image-20221222095434298.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
